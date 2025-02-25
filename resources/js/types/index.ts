@@ -28,6 +28,16 @@ export interface SharedData {
     [key: string]: unknown;
 }
 
+export interface PaginatedData<T> {
+    data: T[];
+    current_page?: number;
+    from?: number;
+    last_page?: number;
+    per_page?: number;
+    to?: number;
+    total?: number;
+}
+
 export interface User {
     id: number;
     name: string;
@@ -37,4 +47,19 @@ export interface User {
     created_at: string;
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
+}
+
+export interface Task {
+    data?: {
+        id: number;
+        title: string;
+        description: string;
+        created_at: string;
+        updated_at: string;
+    };
+    id: number;
+    title: string;
+    description: string;
+    created_at: string;
+    updated_at: string;
 }
